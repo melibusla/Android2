@@ -16,12 +16,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (Intent.ACTION_SEND );
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_EMAIL, "mail@mail.com");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"mail@mail.com", "mail2@gmail.com"});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Este es un mail de prueba");//asunto del mail
                 intent.putExtra(Intent.EXTRA_TEXT, "Mensaje texto");//cuerpo del mensaje
-                Intent mailer = Intent.createChooser(intent, "Enivar mail usando");
+                Intent mailer = Intent.createChooser(intent, "Enviar mail usando");
                 startActivity(intent);
             }
         });
+        findViewById(R.id.btnImagen).setOnClickListener(new View.OnClickListener(){
+
+        });
+
     }
 }
